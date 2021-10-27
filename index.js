@@ -123,7 +123,6 @@ client.on('message', async (message) => {
 
   if (watchedChannels.includes(message.channel.id)) {
     // Random probability bot will reply without being pinged
-    if (0.2 > Math.random()) {
       try {
         message.channel.startTyping()
         await botTalk(message)
@@ -133,7 +132,6 @@ client.on('message', async (message) => {
         console.error(e)
         return message.channel.stopTyping()
       }
-    }
   }
   return
 })
